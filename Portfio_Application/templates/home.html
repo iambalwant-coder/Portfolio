@@ -1,0 +1,462 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Balwant Pakane - Self Introduction</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      body {
+        font-family: "Poppins", sans-serif;
+        margin: 0;
+        background: #4b164c;
+        color: #40207b;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+      }
+
+      .container {
+        max-width: 960px;
+        margin: 20px auto;
+        background-color: #a35c7a;
+        padding: 30px;
+        border-radius: 12px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        overflow: hidden;
+      }
+
+      .header {
+        text-align: center;
+        margin-bottom: 30px;
+      }
+
+      .profile-image {
+        width: 200px; /* Set width */
+        height: 200px; /* Set height */
+        object-fit: cover; /* Maintain aspect ratio */
+        margin: 0 auto 20px;
+        display: block;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+        animation: pulse 2s infinite;
+      }
+
+      @keyframes pulse {
+        0% {
+          transform: scale(1);
+        }
+        50% {
+          transform: scale(1.05);
+        }
+        100% {
+          transform: scale(1);
+        }
+      }
+
+      .contact-info {
+        text-align: center;
+        margin-bottom: 30px;
+        font-size: 1.1em;
+        color: #1a2130;
+      }
+
+      .about-button {
+        display: block;
+        margin: 20px auto;
+        padding: 10px 20px;
+        background-color: #007bff;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        text-align: center;
+        text-decoration: none;
+        font-size: 1em;
+      }
+
+      .about-button:hover {
+        background-color: #0056b3;
+      }
+
+      .section {
+        margin-bottom: 30px;
+        padding: 20px;
+        border-radius: 8px;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+        display: none; /* Hide all sections initially */
+      }
+
+      /* Section Background Colors */
+      #technical-skills {
+        background-color: #57120d; /* Yellow */
+        color: #fff;
+      }
+
+      #projects {
+        background-color: #1d0253; /* Green */
+        color: #fff;
+      }
+
+      #education {
+        background-color: #770868; /* Blue */
+        color: #ffffff;
+      }
+
+      #interests {
+        background-color: #0b2c0c; /* Orange */
+        color: #fff;
+      }
+
+      #highlights {
+        background-color: #482d04; /* Purple */
+        color: #fff;
+      }
+
+      #strengths {
+        background-color: #3a0543; /* Red */
+        color: #fff;
+      }
+
+      .section-title {
+        font-size: 1.4em;
+        font-weight: bold;
+        margin-bottom: 15px;
+        text-transform: uppercase;
+      }
+
+      .skill-list {
+        list-style: disc;
+        padding-left: 20px;
+        font-size: 1.1em;
+      }
+
+      .skill-list li {
+        margin-bottom: 8px;
+      }
+
+      .project-item {
+        margin-bottom: 15px;
+        font-size: 1.1em;
+      }
+
+      .project-item strong {
+        font-weight: bold;
+      }
+
+      .button-container {
+        text-align: center;
+        margin-bottom: 30px;
+        display: flex; /* Make buttons inline */
+        justify-content: center; /* Center buttons */
+      }
+
+      .section-button {
+        padding: 10px 20px;
+        margin: 0 10px;
+        color: white;
+        border: none;
+        border-radius: 8px;
+        cursor: pointer;
+        font-size: 1em;
+        transition: background-color 0.3s ease, transform 0.2s;
+      }
+
+      .section-button:nth-child(1) {
+        background-color: #ff5733;
+      }
+
+      .section-button:nth-child(2) {
+        background-color: #33c7ff;
+      }
+
+      .section-button:nth-child(3) {
+        background-color: #770868;
+      }
+
+      .section-button:nth-child(4) {
+        background-color: #28a745;
+      }
+
+      .section-button:nth-child(5) {
+        background-color: #ffc107;
+      }
+
+      .section-button:nth-child(6) {
+        background-color: #6f42c1;
+      }
+
+      .section-button:hover {
+        transform: scale(1.05);
+      }
+
+      .career-objective {
+        margin-bottom: 30px;
+        font-size: 1.1em;
+        color: #0c1844;
+        text-align: center;
+        font-style: italic;
+      }
+
+      .emoji {
+        animation: bounce 1s infinite;
+        display: inline-block;
+      }
+
+      @keyframes bounce {
+        0%,
+        20%,
+        50%,
+        80%,
+        100% {
+          transform: translateY(0);
+        }
+        40%,
+        60% {
+          transform: translateY(-5px);
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="container">
+      <div class="header">
+        <img
+          src="{% static '/balwant.jpg' %}"
+          alt="Balwant Pakane"
+          class="profile-image"
+        />
+        <h1>Balwant Pakane <span class="emoji">👨‍💻</span></h1>
+        <div class="contact-info">
+          8484010713 📞 | bjp_09@outlook.com 📧 | linkedin.com/in/balwantpakane
+          🔗<br />
+          Rajveer Heights, Narhe, Pune 411041 🏠
+        </div>
+        <a href="about" class="about-button">About Me</a>
+        <div class="career-objective">
+          <p>
+            Aspiring Python Developer seeking a challenging role in a dynamic
+            organization where I can leverage my programming expertise and
+            problem-solving skills to deliver impactful software solutions and
+            drive organizational growth. 🚀
+          </p>
+        </div>
+      </div>
+
+      <div class="button-container">
+        <button class="section-button" data-section="technical-skills">
+          TECHNICAL SKILLS 🛠️
+        </button>
+        <button class="section-button" data-section="projects">
+          PROJECTS 📂
+        </button>
+        <button class="section-button" data-section="education">
+          EDUCATION 🎓
+        </button>
+        <button class="section-button" data-section="interests">
+          ADDITIONAL INTERESTS 💡
+        </button>
+        <button class="section-button" data-section="highlights">
+          KEY HIGHLIGHTS ⭐
+        </button>
+        <button class="section-button" data-section="strengths">
+          STRENGTHS 💪
+        </button>
+      </div>
+
+      <div id="technical-skills" class="section" style="display: block">
+        <div class="section-title">TECHNICAL SKILLS 🛠️</div>
+        <ul class="skill-list">
+          <li>
+            <strong>Programming Languages:</strong> Proficient in Python
+            <span class="emoji">🐍</span>, Java <span class="emoji">☕</span>
+          </li>
+          <li>
+            <strong>Frameworks:</strong> Django <span class="emoji">⚙️</span>,
+            Flask <span class="emoji">🌐</span>, FastAPI
+          </li>
+          <li>
+            <strong>Libraries & Tools:</strong> Numpy
+            <span class="emoji">🔢</span>, Pandas
+            <span class="emoji"> 📊</span>, Beautiful Soup, Tableau
+            <span class="emoji">📈</span>
+          </li>
+          <li><strong>Web Technologies:</strong> HTML5, CSS3, Bootstrap</li>
+          <li>
+            <strong>Database Management:</strong> SQLite
+            <span class="emoji">🗄️</span>, SQL <span class="emoji">📜</span>
+          </li>
+          <li>
+            <strong>Core Skills:</strong> Multithreading, Testing and debugging
+            <span class="emoji">🐞</span>, Problem-solving
+            <span class="emoji">🤔</span>, Adaptability
+            <span class="emoji">🔄</span>, Continuous learning
+            <span class="emoji">📚</span>, Object-Oriented Programming (OOP)
+          </li>
+        </ul>
+      </div>
+
+      <div id="projects" class="section">
+        <div class="section-title">PROJECTS 📂</div>
+        <ul class="skill-list">
+          <li class="project-item">
+            <strong>1. Celebrities Management System:</strong>
+            <ul>
+              <li>
+                <strong>Technologies:</strong> Python, Django, HTML5, CSS3,
+                SQLite
+              </li>
+              <li>
+                Designed and developed a web application to manage celebrity
+                profiles.
+              </li>
+              <li>
+                Enabled functionalities for adding, editing, viewing, and
+                deleting profiles.
+              </li>
+              <li>Utilized Django's ORM for seamless CRUD operations.</li>
+              <li>Ensured a responsive user interface.</li>
+            </ul>
+            <span class="emoji">🌟</span>
+          </li>
+          <li class="project-item">
+            <strong>2. Pokemon Management System:</strong>
+            <ul>
+              <li>
+                <strong>Technologies:</strong> Python, Django, HTML5, CSS3,
+                SQLite
+              </li>
+              <li>
+                Built a system for Pokémon records allowing users to add, view,
+                and delete entries.
+              </li>
+              <li>
+                Focused on creating an intuitive UI and robust backend
+                functionalities.
+              </li>
+            </ul>
+            <span class="emoji">👾</span>
+          </li>
+          <li class="project-item">
+            <strong>3. API Development with FastAPI:</strong>
+            <ul>
+              <li>
+                <strong>Technologies:</strong> Python, FastAPI, HTML5, CSS3,
+                SQLite
+              </li>
+              <li>Developed a RESTful API for managing tasks and projects.</li>
+              <li>Enabled CRUD operations and user authentication.</li>
+              <li>
+                Leveraged FastAPI's asynchronous capabilities to build a
+                high-performance backend.
+              </li>
+            </ul>
+            <span class="emoji">✍️</span>
+          </li>
+        </ul>
+      </div>
+
+      <div id="education" class="section">
+        <div class="section-title">EDUCATION 🎓</div>
+        <ul class="skill-list">
+          <li>
+            <strong>Bachelor of Computer Science</strong><br />
+            Pune University | 2020
+          </li>
+          <li>
+            <strong>Python, Django, and Data Science Certification</strong
+            ><br />
+            Cyber Success Institute, Pune
+          </li>
+        </ul>
+      </div>
+
+      <div id="interests" class="section">
+        <div class="section-title">ADDITIONAL INTERESTS 💡</div>
+        <ul class="skill-list">
+          <li>Python Development <span class="emoji">🐍</span></li>
+          <li>
+            Web Technologies and Software Development
+            <span class="emoji">🌐</span>
+          </li>
+          <li>Data Science and Analytics <span class="emoji">📊</span></li>
+          <li>
+            Continuous Learning and Skill Development
+            <span class="emoji">📚</span>
+          </li>
+        </ul>
+      </div>
+
+      <div id="highlights" class="section">
+        <div class="section-title">KEY HIGHLIGHTS ⭐</div>
+        <ul class="skill-list">
+          <li>
+            Developed end-to-end web applications using Python and Django
+            frameworks, delivering user-centric solutions.
+            <span class="emoji">✅</span>
+          </li>
+          <li>
+            Strong command of data manipulation and visualization using
+            libraries like Pandas and Tableau. <span class="emoji">📈</span>
+          </li>
+          <li>
+            Solid understanding of testing techniques and debugging tools to
+            ensure application reliability. <span class="emoji"> 🐞</span>
+          </li>
+          <li>
+            Demonstrated ability to adapt to new technologies and methodologies
+            to meet project goals. <span class="emoji">🚀</span>
+          </li>
+        </ul>
+      </div>
+
+      <div id="strengths" class="section">
+        <div class="section-title">STRENGTHS 💪</div>
+        <ul class="skill-list">
+          <li>
+            Analytical mindset with a focus on solving complex technical
+            problems efficiently. <span class="emoji">💡</span>
+          </li>
+          <li>
+            Proactive approach to learning and applying emerging technologies.
+            <span class="emoji">🌱</span>
+          </li>
+          <li>
+            Effective collaboration with cross-functional teams to achieve
+            project milestones. <span class="emoji">🤝</span>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <script>
+      const buttons = document.querySelectorAll(".section-button");
+      const sections = document.querySelectorAll(".section");
+
+      sections.forEach((section) => {
+        section.style.display = "none"; // Hide all sections initially
+      });
+
+      document.getElementById("technical-skills").style.display = "block"; // Show Technical Skills by default
+
+      buttons.forEach((button) => {
+        button.addEventListener("click", () => {
+          const targetSection = document.getElementById(button.dataset.section);
+
+          sections.forEach((section) => {
+            section.style.display = "none"; // Hide all sections
+          });
+
+          if (targetSection) {
+            targetSection.style.display = "block"; // Show the selected section
+          }
+        });
+      });
+    </script>
+  </body>
+</html>
